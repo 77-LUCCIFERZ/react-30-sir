@@ -17,7 +17,7 @@ export const authApi = createApi({
             query: (credentials) => ({
                 url: "/auth/login",
                 method: "POST",
-                body: credentials
+                body: credentials,
             })
         }),
         getLoggedInUser: builder.query<any, void>({

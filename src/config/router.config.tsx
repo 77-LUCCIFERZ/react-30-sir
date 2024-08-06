@@ -20,6 +20,7 @@ import { useDispatch } from "react-redux"
 import { getLoggedInUserFromReducer } from "../reducer/auth.reducer"
 import { useEffect, useState } from "react"
 import LoadingComponent from "../components/common/loading/loading.component"
+import ChatListView from "../pages/chat/chat.page"
 
 
 const RouterConfig = () => {
@@ -55,6 +56,8 @@ const RouterConfig = () => {
                                     <Route path="/activate/:token" element={<ActivationPage />}></Route>
                                     
                                     <Route path="category/:slug" element={<CategoryDetailPage />}></Route>
+                                    
+                                    <Route path="chat" element={<ChatListView />}></Route>
 
 
                                     <Route path="*" element={<NotFound url="/" redirectTxt="Go back to HOME Page"  />}></Route>

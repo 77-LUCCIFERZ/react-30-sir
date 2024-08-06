@@ -4,14 +4,15 @@ import { useContext } from "react";
 import AuthContext from "../../context/auth.context";
 import { useSelector } from "react-redux";
 import { useGetLoggedInUserQuery } from "../../pages/auth/authApi";
+import { FaMessage } from "react-icons/fa6";
 const HomeHeader = () => {
     // const auth: any = useContext(AuthContext);
     const {data, isLoading, isError} = useGetLoggedInUserQuery();
 
     if(isLoading) return <>Loading</>
-    if(isError) return <>Error </>
+    // if(isError) return <>Error </>
 
-    let auth = data.result;
+    let auth = data?.result;
     // const auth: any = useSelector((root: any) => {
     //     return root.auth.loggedInUser || null;
     // })
@@ -27,6 +28,7 @@ const HomeHeader = () => {
                     
                     {
                         auth && auth ? <>
+                            <LinkComponent link={"/chat"} icon={<FaMessage className="ms-3" />} text={"Chat"}/>
                             <LinkComponent link={"/"+auth.role} icon="&rarr;" text={auth.name}/>
                             <LinkComponent link="/logout" icon="&rarr;" text="Logout"/>
                         </> : <>
