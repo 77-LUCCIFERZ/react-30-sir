@@ -24,6 +24,7 @@
     "react-router-dom": "^6.24.1",
     "react-select": "^5.8.0",
     "react-toastify": "^10.0.5",
+    "socket.io-client": "^4.7.5",
     "sweetalert2": "^11.12.3",
     "yup": "^1.4.0"
   },
